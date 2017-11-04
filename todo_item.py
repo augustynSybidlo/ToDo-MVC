@@ -31,6 +31,6 @@ class ToDo(object):
 
     def __str__(self):
         if self.is_done is True:
-            return "|| [x]  | {} ||".format((self.name + " "*(21 - len(self.name))))
+            return " [x]  | {} ||".format((self.name + " " * (21 - len(self.name))))
         else:
-            return "|| [ ]  | {} ||".format((self.name + " "*(21 - len(self.name))))
+            return " [ ]  | {} ||".format((self.name + " " * (21 - len(self.name))))
