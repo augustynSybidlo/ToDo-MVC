@@ -1,4 +1,4 @@
-class ToDo:
+class ToDo(object):
 
     def __init__(self, name, description):
         if isinstance(name, str):
