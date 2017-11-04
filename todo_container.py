@@ -8,3 +8,14 @@ class ToDoContainer(object):
 
     def add_todo_item(self):
         self.todo_items.append(ToDo(name, description))
+
+    def delete_item(self, index):
+        self.todo_items.pop(index)
+
+    def __str__(self):
+        notes = ""
+
+        for item in self.todo_items:
+            note += "|{}| {} |".format(self.todo_items.index(item), item.__str__())
+
+        return notes
