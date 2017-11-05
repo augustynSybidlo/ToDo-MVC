@@ -4,9 +4,11 @@ from todo_container import ToDoContainer
 
 
 def display_all_info(item, notes):
+
     header = "|Id| Status|          Name         ||"
     line = "=" * len(header)
     width = len(header) - 4
+
     print(line)
     print(header)
     print(line)
@@ -14,6 +16,15 @@ def display_all_info(item, notes):
     print(line, '\n', "Description: ")
     pprint(item.description, width=width)
     print(line)
+
+
+def display_menu(header, menu):
+
+    print(header)
+
+    for option in menu:
+        print(str(menu.index(option) + 1) + "----->" + option)
+
 
 note1 = ToDo("zrobic pranie i rozw", "pranie na dzis: kpasofiapofipsoi, aisdfpoiasdfpoiaolorowe, ciemne, rozwiesic")
 temp_list = ToDoContainer()
