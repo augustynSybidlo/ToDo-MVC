@@ -68,7 +68,7 @@ __Instance methods__
 
   Constructs a *ToDoContainer* object with list of Todo objects
 
-* `add_item(self, name, description)`
+* `add_todo_item(self, item)`
 
   Append *Todo* object to *todo_items*
 
