@@ -23,13 +23,13 @@ def main():
 
     while True:
 
-        os.system('clear')
         display_menu(header_2, menu)
         option = input("Please select an option: ")
         os.system('clear')
 
         if option == '1':
 
+            display_items(header, notes)
             while True:
 
                 name = input("Please type name of note (max 20 chars): ")
@@ -55,12 +55,18 @@ def main():
             while True:
 
                 display_items(header, notes)
-                note_id = int(input("Which note would you like to choose? Type Id of note: "))
-                if note_id <= len(notes.todo_items) - 1:
-                    break
+                try:
+                    note_id = int(input("Which note would you like to choose? Type Id of note: "))
+                    if note_id <= len(notes.todo_items) - 1:
+                        os.system('clear')
+                        break
+                    else:
+                        print("Incorrect Id! Try again!")
+                        continue
+                except ValueError:
+                    print("Must be intiger!")
                 else:
-                    print("Incorrect Id! Try again!")
-                    continue
+                    break
 
             if option == '2':
 
