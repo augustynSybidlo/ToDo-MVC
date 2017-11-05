@@ -3,7 +3,7 @@ from todo_item import ToDo
 from todo_container import ToDoContainer
 
 
-def display_all_info(item, notes):
+def display_item_info(item, notes):
 
     header = "|Id| Status|          Name         ||"
     line = "=" * len(header)
