@@ -14,9 +14,6 @@ class ToDo(object):
     def mark(self):
         self.is_done = True
 
-    def unmark(self):
-        self.is_done = False
-
     def change_name(self, new_name):
         if isinstance(new_name, str):
             self.name = new_name
