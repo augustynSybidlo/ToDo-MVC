@@ -11,7 +11,7 @@ def display_item_info(item, notes, header):
     print(line)
     print(header)
     print(line)
-    print("|{}.|{}".format(notes.todo_items.index(item) + 1), item)
+    print("|{}.|{}".format(notes.todo_items.index(item), item))
     print(line, '\n', "Description: ")
     pprint(item.description, width=width)
     print(line)
