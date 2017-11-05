@@ -50,10 +50,11 @@ def main():
 
             notes.add_todo_item(ToDo(name, description))
 
-        elif option in ('2', '3', '4', '5', '7'):
+        elif option in ('2', '3', '4', '5', '7') and len(notes.todo_items) > 0:
 
             while True:
 
+                display_items(header, notes)
                 note_id = int(input("Which note would you like to choose? Type Id of note: "))
                 if note_id <= len(notes.todo_items) - 1:
                     break
