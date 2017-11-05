@@ -16,6 +16,6 @@ class ToDoContainer(object):
         notes = ""
 
         for item in self.todo_items:
-            notes += "|{}{} \n".format(self.todo_items.index(item), item.__str__())
+            notes += "|{}{} \n".format(self.todo_items.index(item) + 1, item.__str__())
 
         return notes

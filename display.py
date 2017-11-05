@@ -3,22 +3,22 @@ from todo_item import ToDo
 from todo_container import ToDoContainer
 
 
-def display_item_info(item, notes):
+def display_item_info(item, notes, header):
 
-    header = "|Id| Status|          Name         ||"
     line = "=" * len(header)
     width = len(header) - 4
 
     print(line)
     print(header)
     print(line)
-    print("|{}.|".format(notes.todo_items.index(item) + 1), item)
+    print("|{}.|{}".format(notes.todo_items.index(item) + 1), item)
     print(line, '\n', "Description: ")
     pprint(item.description, width=width)
     print(line)
 
 
 def display_items(header, notes):
+
     print(header)
     print(notes)
 
