@@ -60,34 +60,44 @@ def main():
                     print("Incorrect Id! Try again!")
                     continue
 
-                if option == '2':
+            if option == '2':
 
-                    while True:
+                while True:
 
-                        new_name = input("Please type name of note (max 20 chars): ")
-                        if len(new_name) <= 20 and len(new_name) > 0:
-                            break
-                        else:
-                            print("Incorrect number of characters! Try again")
-                            continue
+                    new_name = input("Please type new name of note (max 20 chars): ")
+                    if len(new_name) <= 20 and len(new_name) > 0:
+                        break
+                    else:
+                        print("Incorrect number of characters! Try again")
+                        continue
 
-                    notes.todo_items[note_id].change_name(new_name)
+                notes.todo_items[note_id - 1].change_name(new_name)
 
-                elif option == '3':
+            elif option == '3':
 
-                    while True:
+                while True:
 
-                        new_description = input("Please type description of note (max 20 chars): ")
-                        if len(new_description) <= 150 and len(new_description) > 0:
-                            break
-                        else:
-                            print("Incorrect number of characters! Try again")
-                            continue
+                    new_description = input("Please type new description of note (max 20 chars): ")
+                    if len(new_description) <= 150 and len(new_description) > 0:
+                        break
+                    else:
+                        print("Incorrect number of characters! Try again")
+                        continue
 
-                    notes.todo_items[note_id].change_description(new_description)
+                notes.todo_items[note_id - 1].change_description(new_description)
 
         elif option == '4':
-            pass
+
+            while True:
+
+                note_id = int(input("Which note would You like to modify? Type id of note: "))
+                if note_id <= len(notes.todo_items) + 1:
+                    break
+                else:
+                    print("Incorrect Id! Try again!")
+                    continue
+
+            notes.delete_item(note_id)
 
         elif option == '5':
             pass
