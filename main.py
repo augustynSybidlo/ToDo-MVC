@@ -23,6 +23,7 @@ def main():
 
     while True:
 
+        os.system('clear')
         display_menu(header_2, menu)
         option = input("Please select an option: ")
         os.system('clear')
@@ -49,12 +50,12 @@ def main():
 
             notes.add_todo_item(ToDo(name, description))
 
-        elif option == '2' or option == '3':
+        elif option in ('2', '3', '4', '5', '7'):
 
             while True:
 
-                note_id = int(input("Which note would You like to modify? Type id of note: "))
-                if note_id <= len(notes.todo_items) + 1:
+                note_id = int(input("Which note would you like to choose? Type Id of note: "))
+                if note_id <= len(notes.todo_items) - 1:
                     break
                 else:
                     print("Incorrect Id! Try again!")
@@ -71,42 +72,36 @@ def main():
                         print("Incorrect number of characters! Try again")
                         continue
 
-                notes.todo_items[note_id - 1].change_name(new_name)
+                notes.todo_items[note_id].change_name(new_name)
 
             elif option == '3':
 
                 while True:
 
-                    new_description = input("Please type new description of note (max 20 chars): ")
+                    new_description = input("Please type new description of note (max 150 chars): ")
                     if len(new_description) <= 150 and len(new_description) > 0:
                         break
                     else:
                         print("Incorrect number of characters! Try again")
                         continue
 
-                notes.todo_items[note_id - 1].change_description(new_description)
+                notes.todo_items[note_id].change_description(new_description)
 
-        elif option == '4':
+            elif option == '4':
 
-            while True:
+                notes.delete_item(note_id)
 
-                note_id = int(input("Which note would You like to modify? Type id of note: "))
-                if note_id <= len(notes.todo_items) + 1:
-                    break
-                else:
-                    print("Incorrect Id! Try again!")
-                    continue
+            elif option == '5':
 
-            notes.delete_item(note_id)
+                notes.todo_items[note_id].mark()
 
-        elif option == '5':
-            pass
+            elif option == '7':
+                item = notes.todo_items[note_id]
+                display_item_info(item, notes, header)
 
         elif option == '6':
-            pass
 
-        elif option == '7':
-            pass
+            display_items(header, notes)
 
         elif option == '8':
             print("Good bye!")
