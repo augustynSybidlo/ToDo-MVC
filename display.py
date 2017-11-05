@@ -18,16 +18,14 @@ def display_item_info(item, notes):
     print(line)
 
 
+def display_items(header, notes):
+    print(header)
+    print(notes)
+
+
 def display_menu(header, menu):
 
     print(header)
 
     for option in menu:
         print(str(menu.index(option) + 1) + "----->" + option)
-
-
-note1 = ToDo("zrobic pranie i rozw", "pranie na dzis: kpasofiapofipsoi, aisdfpoiasdfpoiaolorowe, ciemne, rozwiesic")
-temp_list = ToDoContainer()
-temp_list.add_todo_item(note1)
-#print(temp_list.__str__())
-display_all_info(note1, temp_list)
